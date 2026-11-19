@@ -15,6 +15,8 @@ SERIF_REG = f"{FD}/NotoSerif-Regular.ttf"
 SANS_BOLD = f"{FD}/NotoSans-Bold.ttf"
 SANS_REG = f"{FD}/NotoSans-Regular.ttf"
 SANS_SEMI = f"{FD}/NotoSans-SemiBold.ttf"
+DEJA = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+DEJA_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 _cache = {}
 def F(path, size):
@@ -76,42 +78,42 @@ HEROES = [
 
 SECTIONS = [
  ("WORLD", (139,30,30), "bridge", [
-   ("CRIMEA", "Crimean Bridge attacked again, Russian official says", "Russian official reports a fresh strike on the Kerch crossing."),
+   ("CRIMEA", "Crimean Bridge attacked again, official says", "Russian official reports a fresh strike on the Kerch crossing."),
    ("EUROPE", "EU proposes \u20ac45bn Ukraine loan", "Repaid only after Russia pays reparations, under the EU proposal."),
-   ("GAZA", "Israeli forces launch rare Gaza ground operation", "A rare ground move beyond the Yellow Line, reports say."),
-   ("GAZA AID", "Four nations demand Israel let aid reach flooded Gaza", "Australia, Canada, Italy and UK press for aid access."),
+   ("GAZA", "Israel launches rare Gaza ground operation", "A rare ground move beyond the Yellow Line, reports say."),
+   ("GAZA AID", "Four nations demand aid reach flooded Gaza", "Australia, Canada, Italy and UK press for aid access."),
    ("WEST BANK", "Australia sanctions Israeli settlers", "Sanctions over West Bank expansion, Canberra says."),
    ("KOREA", "North Korea fires ballistic missiles", "Launches hours after a US\u2013South Korea\u2013Japan drill."),
-   ("MYANMAR", "Myanmar faces historic UN genocide verdict", "UN verdict over the Rohingya, a historic ruling."),
+   ("MYANMAR", "Myanmar faces UN genocide verdict", "UN verdict over the Rohingya, a historic ruling."),
  ]),
  ("US & POLITICS", (30,58,95), "capitol", [
    ("HOUSE", "Democrats nominate Hakeem Jeffries", "Set to be the first Black Speaker of the House."),
    ("SENATE", "Democrat Peltola wins Alaska", "Victory secures a 56\u201344 Senate majority."),
-   ("CYBER", "Senators warn AI cyber threats outpace US defenses", "AI-enabled threats are outpacing US defenses, senators warn."),
-   ("VENEZUELA", "State Dept details $12bn in Venezuelan revenue", "Details cover oil and mineral revenue of $12bn."),
+   ("CYBER", "Senators: AI cyber threats outpace defenses", "AI-enabled threats are outpacing US defenses, senators warn."),
+   ("VENEZUELA", "State Dept details $12bn Venezuelan revenue", "Details cover oil and mineral revenue of $12bn."),
    ("DEFENSE", "Hegseth makes surprise Venezuela trip", "Signs a defense pact on the surprise visit."),
-   ("ISRAEL", "Israel's president taps Eisenkot to form government", "Eisenkot tapped, bypassing Netanyahu."),
+   ("ISRAEL", "Israel's president taps Eisenkot for government", "Eisenkot tapped, bypassing Netanyahu."),
  ]),
  ("MONEY & TECH", (20,83,45), "chart", [
-   ("IPO", "Anthropic raises $81.3bn in biggest IPO of all time", "Poised for a $1.4tn market debut, the biggest IPO ever."),
+   ("IPO", "Anthropic raises $81.3bn in biggest IPO ever", "Poised for a $1.4tn market debut, the biggest IPO ever."),
    ("NVIDIA", "Nvidia founder Jensen Huang steps down", "Kress promises earlier raises, more stock; H-series China shipments halt."),
-   ("FED", "Fed minutes: most officials expect further rate hikes", "Most officials expect further hikes, minutes show."),
+   ("FED", "Fed minutes: most expect further rate hikes", "Most officials expect further hikes, minutes show."),
    ("OIL", "Oil prices drop as supplies improve", "Improving supplies outweigh Middle East tensions."),
-   ("AMAZON", "Amazon announces $7bn renewables in India by 2030", "A $7bn renewable-energy investment in India by 2030."),
-   ("GERMANY", "Germany blocks Cosco takeover of Hamburg firm Zippel", "Berlin blocks Cosco's takeover of logistics firm Zippel."),
+   ("AMAZON", "Amazon: $7bn renewables in India by 2030", "A $7bn renewable-energy investment in India by 2030."),
+   ("GERMANY", "Germany blocks Cosco takeover of Zippel", "Berlin blocks Cosco's takeover of logistics firm Zippel."),
    ("ESPIONAGE", "Russian arrested for spying on Palantir", "Arrested for spying on US defense firm Palantir."),
  ]),
  ("SCIENCE & PLANET", (15,118,110), "rocket", [
    ("SPACE", "NASA's Voyager 1 reaches one-light-day milestone", "Nearly 50 years after launch, a one-light-day first."),
    ("OCEANS", "Nearly all coral reefs face extinction within 50 years", "IUCN study warns reefs face extinction within 50 years."),
-   ("FINLAND", "Finland approves first permanent nuclear waste repository", "The world's first permanent repository, approved."),
-   ("CYCLONE", "Cyclone Akvan bears down on Machilipatnam\u2013Puri coast", "Set to cross the coast on 20 November."),
-   ("SPACE LAW", "ESA chief calls for space laws, satellite surveillance", "Calls for space laws and satellite surveillance."),
+   ("FINLAND", "Finland approves first nuclear waste repository", "The world's first permanent repository, approved."),
+   ("CYCLONE", "Cyclone Akvan bears down on Andhra coast", "Set to cross the coast on 20 November."),
+   ("SPACE LAW", "ESA chief calls for space laws, surveillance", "Calls for space laws and satellite surveillance."),
  ]),
  ("SOCIETY & CULTURE", (124,45,90), "palette", [
-   ("ART", "Van Gogh painting sells for record $190.4m", "Record sale after a row over its Nazi history."),
+   ("ART", "Van Gogh sells for record $190.4m", "Record sale after a row over its Nazi history."),
    ("PEW", "Islam on track to be world's largest religion by 2035", "Pew projects the shift by 2035."),
-   ("FRANCE", "France sees fourth weekend of living-cost protests", "A fourth weekend of protests over living costs."),
+   ("FRANCE", "France: fourth weekend of cost protests", "A fourth weekend of protests over living costs."),
    ("UK\u2013INDIA", "PM Modi meets Prince and Princess of Wales", "Meeting on UK\u2013India ties."),
    ("OBITUARY", "Pearl Harbor survivor Gebhard Galle dies at 105", "Survivor Gebhard Galle dies at 105."),
  ]),
@@ -121,7 +123,7 @@ SECTIONS = [
    ("NBA", "Cavaliers edge Grizzlies 105\u2013102", "Cleveland edge Memphis in a 105\u2013102 finish."),
    ("CRICKET", "Duckett hits 133 as England take charge", "Third ODI vs Australia: Duckett's 133 puts England on top."),
    ("HOCKEY", "India women open hockey campaign vs Malaysia", "Asian Champions Trophy opener in Bhopal."),
-   ("POLICY", "Sports Ministry forms 14-member league committee", "Committee for professionally run leagues."),
+   ("POLICY", "Sports Ministry forms 14-member committee", "Committee for professionally run leagues."),
  ]),
 ]
 
@@ -226,9 +228,9 @@ def art_vice(d, x, y, w, h):
     d.rectangle([x+8,y+6,x+94,y+22], fill=(10,10,30), outline=(0,230,210), width=2)
     d.text((x+14,y+9), "VICE CITY", font=F(SANS_BOLD,11), fill=(255,90,200))
     for px in (x+18, x+w-30):
-        d.line([px,y+h-30,px,y+h-66], fill=(90,60,30), width=3)
-        for a in (-34,-14,8,28):
-            d.line([px,y+h-66,px+a,y+h-80-abs(a)//3], fill=(30,160,90), width=3)
+        d.line([px,y+h-30,px,y+h-62], fill=(90,60,30), width=3)
+        for a in (-20,-10,0,10,20):
+            d.line([px,y+h-62,px+a,y+h-72- (10-abs(a)//2)], fill=(30,170,95), width=2)
     d.polygon([(x+92,y+h-14),(x+140,y+h-18),(x+152,y+h-10),(x+146,y+h-5),(x+100,y+h-5)], fill=(12,12,16), outline=(0,230,210))
     d.ellipse([x+104,y+h-11,x+114,y+h-4], fill=(60,60,70)); d.ellipse([x+132,y+h-11,x+142,y+h-4], fill=(60,60,70))
     d.rectangle([x,y+h-4,x+w,y+h], fill=(255,90,180))
@@ -302,7 +304,7 @@ def main():
         d.text((x+7,hy+hh-13), hero["src"], font=F(SANS_BOLD,7), fill=MUTED)
     # Sections: 3 columns x 2 rows, row heights sized to card counts
     sy = hy+hh+8
-    row_h = [244, 213]
+    row_h = [250, 210]
     row_y = [sy, sy+row_h[0]+6]
     colw = hw
     positions = [(0,0),(1,0),(2,0),(0,1),(1,1),(2,1)]
@@ -321,18 +323,19 @@ def main():
             tx = x+7
             if ci==0:
                 thumb(d, x+7, cy+1, 30, tk, col); tx = x+43
-            yend = fit_block(d, tx, cy, head, SERIF_BOLD, 11, x2-7-tx, 1.05, 2, 9, INK)
-            dy = yend + 1
+            yend = fit_block(d, tx, cy, head, SERIF_BOLD, 11, x2-7-tx, 1.12, 2, 9, INK)
+            dy = yend + 2
             kw = tw(d, kick, F(SANS_BOLD,6))
             d.text((tx,dy), kick, font=F(SANS_BOLD,6), fill=col)
             d.text((tx+kw+5, dy), one_line(d, deck, F(SANS_REG,8), x2-7-(tx+kw+5)), font=F(SANS_REG,8), fill=(60,55,45))
-            cy += per
+            cy += per + (6 if ci==0 else -1)
             if ci < len(cards)-1: d.line([x+6,cy-3,x2-6,cy-3], fill=(205,196,168), width=1)
     # Numbers band
     ny = row_y[1] + row_h[1] + 8
     d.rectangle([M,ny,R,ny+50], fill=(26,23,16))
     d.text((M+8,ny+4), "BY THE NUMBERS", font=F(SERIF_BOLD,9), fill=(255,205,80))
     nw = (R-M-16)//4
+    for dv in range(1,4): d.line([M+8+dv*nw-6,ny+14,M+8+dv*nw-6,ny+46], fill=(90,82,60), width=1)
     for i,(big,lab) in enumerate(NUMBERS):
         col_i, row_i = i%4, i//4
         x = M+8+col_i*nw; y = ny+16+row_i*17
@@ -351,7 +354,7 @@ def main():
         d.text((x,y), name, font=F(SANS_BOLD,10), fill=INK)
         arrow = "\u25b2" if up else "\u25bc"
         acol = (20,140,60) if up else (190,40,40)
-        d.text((x+tw(d,name,F(SANS_BOLD,10))+6,y), arrow, font=F(SANS_BOLD,11), fill=acol)
+        d.text((x+tw(d,name,F(SANS_BOLD,10))+6,y), arrow, font=F(DEJA_BOLD,11), fill=acol)
         d.text((x,y+13), note, font=F(SANS_REG,7), fill=MUTED)
         sx, sy2 = x+78, y+2
         coords = [(sx+j*11, sy2+pts[j]*2) for j in range(len(pts))]
@@ -370,8 +373,9 @@ def main():
     d.text((R-8-tw(d,folio,F(SANS_REG,7)),ty+5), folio, font=F(SANS_REG,7), fill=(255,235,220))
     ticker_text = "  \u25c6  ".join(TICKER)
     yy = ty+17
-    for ln in wrap(d, ticker_text, F(SANS_REG,8), R-M-16)[:3]:
-        d.text((M+8,yy), ln, font=F(SANS_REG,8), fill=(255,248,235)); yy += 11
+    for ln in wrap(d, ticker_text, F(DEJA,8), R-M-16)[:3]:
+        d.text((M+8,yy), ln, font=F(DEJA,8), fill=(255,248,235)); yy += 11
+    d.line([M,1010,R,1010], fill=RULE, width=3); d.line([M,1015,R,1015], fill=RULE, width=1)
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "entry.png")
     img.save(out, optimize=True)
     print(f"STORY_COUNT={count_stories()}")
