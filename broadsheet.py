@@ -78,8 +78,8 @@ HEROES = [
 
 SECTIONS = [
  ("WORLD", (139,30,30), "bridge", [
-   ("CRIMEA", "Crimean Bridge attacked again, official says", "Russian official reports a fresh strike on the Kerch crossing."),
-   ("EUROPE", "EU proposes \u20ac45bn Ukraine loan", "Repaid only after Russia pays reparations, under the EU proposal."),
+   ("CRIMEA", "Crimean Bridge attacked again, official says", "Russian official reports fresh strike on Kerch crossing."),
+   ("EUROPE", "EU proposes \u20ac45bn Ukraine loan", "Repaid only after Russia pays reparations, under EU proposal."),
    ("GAZA", "Israel launches rare Gaza ground operation", "A rare ground move beyond the Yellow Line, reports say."),
    ("GAZA AID", "Four nations demand aid reach flooded Gaza", "Australia, Canada, Italy and UK press for aid access."),
    ("WEST BANK", "Australia sanctions Israeli settlers", "Sanctions over West Bank expansion, Canberra says."),
@@ -96,7 +96,7 @@ SECTIONS = [
  ]),
  ("MONEY & TECH", (20,83,45), "chart", [
    ("IPO", "Anthropic raises $81.3bn in biggest IPO ever", "Poised for a $1.4tn market debut, the biggest IPO ever."),
-   ("NVIDIA", "Nvidia founder Jensen Huang steps down", "Kress promises earlier raises, more stock; H-series China shipments halt."),
+   ("NVIDIA", "Nvidia founder Jensen Huang steps down", "Kress promises raises, more stock; H-series China shipments halt."),
    ("FED", "Fed minutes: most expect further rate hikes", "Most officials expect further hikes, minutes show."),
    ("OIL", "Oil prices drop as supplies improve", "Improving supplies outweigh Middle East tensions."),
    ("AMAZON", "Amazon: $7bn renewables in India by 2030", "A $7bn renewable-energy investment in India by 2030."),
@@ -118,7 +118,7 @@ SECTIONS = [
    ("OBITUARY", "Pearl Harbor survivor Gebhard Galle dies at 105", "Survivor Gebhard Galle dies at 105."),
  ]),
  ("SPORT", (154,52,18), "trophy", [
-   ("FOOTBALL", "India beat Pakistan 2\u20131 to win SAFF final", "SAFF Championship final in Dhaka: India 2\u20131 Pakistan."),
+   ("FOOTBALL", "India beat Pakistan 2\u20131 to win SAFF final", "SAFF final in Dhaka: India 2\u20131 Pakistan."),
    ("NBA", "Mavericks 116, Warriors 94", "Cooper Flagg scores 33 with 9 assists."),
    ("NBA", "Cavaliers edge Grizzlies 105\u2013102", "Cleveland edge Memphis in a 105\u2013102 finish."),
    ("CRICKET", "Duckett hits 133 as England take charge", "Third ODI vs Australia: Duckett's 133 puts England on top."),
@@ -175,9 +175,18 @@ def art_shenzhen(d, x, y, w, h):
                 d.rectangle([wx,wy,wx+3,wy+4], fill=(255,230,130))
         bx += bw+5
     d.rectangle([x,y+h-38,x+w,y+h], fill=(70,70,74))
-    for px,col in [(x+26,(200,30,40)),(x+w//2-10,(30,80,180)),(x+w-58,(245,200,40))]:
-        d.line([px,y+h-38,px,y+h-78], fill=(20,20,20), width=2)
-        d.polygon([(px,y+h-78),(px+26,y+h-71),(px,y+h-64)], fill=col, outline=(20,20,20))
+    # Three distinct flags: solid red, solid blue, white with a red stripe.
+    for px, style in [(x+26,"red"),(x+w//2-10,"blue"),(x+w-58,"white")]:
+        top = y+h-78
+        d.line([px,y+h-38,px,top], fill=(20,20,20), width=2)
+        flag = [(px,top),(px+27,top+2),(px+27,top+12),(px,top+14)]
+        if style=="red":
+            d.polygon(flag, fill=(205,25,35), outline=(20,20,20))
+        elif style=="blue":
+            d.polygon(flag, fill=(30,80,185), outline=(20,20,20))
+        else:
+            d.polygon(flag, fill=(250,250,248), outline=(20,20,20))
+            d.polygon([(px,top+6),(px+27,top+8),(px+27,top+11),(px,top+12)], fill=(205,25,35))
     d.polygon([(x+52,y+h-18),(x+104,y+h-25),(x+114,y+h-17),(x+66,y+h-11)], fill=(225,228,232), outline=INK)
     d.rectangle([x+128,y+h-14,x+w-110,y+h-9], fill=(190,30,40))
     for i in range(7):
@@ -205,9 +214,23 @@ def art_hormuz(d, x, y, w, h):
         d.polygon([(px,cy-6),(px+16,cy-6),(px+8,cy-13)], fill=(40,48,58))
     for i in range(4):
         d.arc([cx-8+i*4, cy+14, cx+150, cy+26], 0, 180, fill=(230,245,250), width=1)
-    ex, ey = x+w-108, y+h-46
-    d.polygon([(ex,ey),(ex+62,ey),(ex+54,ey+9),(ex+8,ey+9)], fill=(110,60,50), outline=INK)
-    d.rectangle([ex+34,ey-12,ex+44,ey], fill=(80,50,45))
+    # Merchant ship in front of the carrier: clear hull + stacked containers.
+    ex, ey = x+w-118, y+h-42
+    # Bridge tower at the stern (right side), white with a dark window band.
+    d.rectangle([ex+58,ey-19,ex+68,ey], fill=(242,242,238), outline=INK)
+    d.rectangle([ex+60,ey-16,ex+66,ey-12], fill=(35,70,110))
+    # Container stacks on deck: two rows of coloured boxes amidships.
+    for i, ccol in enumerate([(198,52,38),(38,105,175),(232,148,32)]):
+        bx = ex+4+i*17
+        d.rectangle([bx,ey-8,bx+15,ey], fill=ccol, outline=INK)
+    for i, ccol in enumerate([(28,148,88),(198,52,38)]):
+        bx = ex+8+i*17
+        d.rectangle([bx,ey-16,bx+15,ey-8], fill=ccol, outline=INK)
+    # Hull: long rust-red hull with a raked bow, plus a white wake line.
+    d.polygon([(ex,ey),(ex+74,ey),(ex+66,ey+11),(ex+8,ey+11)], fill=(165,45,35), outline=INK)
+    d.line([ex-4,ey+13,ex+40,ey+13], fill=(230,245,250), width=1)
+    for i in range(3):
+        d.ellipse([ex+16+i*18,ey+4,ex+19+i*18,ey+7], fill=(250,240,200))
 
 def art_vice(d, x, y, w, h):
     d.rectangle([x,y,x+w,y+h], fill=(18,16,52))
@@ -227,10 +250,22 @@ def art_vice(d, x, y, w, h):
         bx += bw+6
     d.rectangle([x+8,y+6,x+94,y+22], fill=(10,10,30), outline=(0,230,210), width=2)
     d.text((x+14,y+9), "VICE CITY", font=F(SANS_BOLD,11), fill=(255,90,200))
-    for px in (x+18, x+w-30):
-        d.line([px,y+h-30,px,y+h-62], fill=(90,60,30), width=3)
-        for a in (-20,-10,0,10,20):
-            d.line([px,y+h-62,px+a,y+h-72- (10-abs(a)//2)], fill=(30,170,95), width=2)
+    for px in (x+30, x+w-38):
+        crown_y = y+h-62
+        d.line([px+3,y+h-30,px,y+h-46], fill=(90,60,30), width=3)
+        d.line([px,y+h-46,px-1,crown_y], fill=(90,60,30), width=3)
+        # Drooping fronds: quadratic curves that arch up from the crown
+        # and then fall, tips below the arch, so the tree reads as a palm.
+        for dx, lift, drop in [(-30,10,14),(-24,15,5),(-12,17,-1),(0,18,-3),(12,17,-1),(24,15,5),(30,10,14)]:
+            pts = []
+            for i in range(9):
+                t = i/8
+                fx = (1-t)**2*px + 2*(1-t)*t*(px+dx*0.5) + t**2*(px+dx)
+                fy = (1-t)**2*crown_y + 2*(1-t)*t*(crown_y-lift) + t**2*(crown_y+drop)
+                pts.append((fx,fy))
+            d.line(pts, fill=(30,170,95), width=2)
+        d.ellipse([px-3,crown_y-2,px+1,crown_y+2], fill=(120,85,40))
+        d.ellipse([px+1,crown_y-1,px+5,crown_y+3], fill=(120,85,40))
     d.polygon([(x+92,y+h-14),(x+140,y+h-18),(x+152,y+h-10),(x+146,y+h-5),(x+100,y+h-5)], fill=(12,12,16), outline=(0,230,210))
     d.ellipse([x+104,y+h-11,x+114,y+h-4], fill=(60,60,70)); d.ellipse([x+132,y+h-11,x+142,y+h-4], fill=(60,60,70))
     d.rectangle([x,y+h-4,x+w,y+h], fill=(255,90,180))
@@ -323,25 +358,28 @@ def main():
             tx = x+7
             if ci==0:
                 thumb(d, x+7, cy+1, 30, tk, col); tx = x+43
-            yend = fit_block(d, tx, cy, head, SERIF_BOLD, 11, x2-7-tx, 1.12, 2, 9, INK)
+            yend = fit_block(d, tx, cy, head, SERIF_BOLD, 11, x2-7-tx, 1.12, 2, 11, INK)
             dy = yend + 2
-            kw = tw(d, kick, F(SANS_BOLD,6))
-            d.text((tx,dy), kick, font=F(SANS_BOLD,6), fill=col)
-            d.text((tx+kw+5, dy), one_line(d, deck, F(SANS_REG,8), x2-7-(tx+kw+5)), font=F(SANS_REG,8), fill=(60,55,45))
+            kw = tw(d, kick, F(SANS_BOLD,8))
+            d.text((tx,dy), kick, font=F(SANS_BOLD,8), fill=col)
+            d.text((tx+kw+5, dy), one_line(d, deck, F(SANS_REG,9), x2-7-(tx+kw+5)), font=F(SANS_REG,9), fill=(60,55,45))
             cy += per + (6 if ci==0 else -1)
             if ci < len(cards)-1: d.line([x+6,cy-3,x2-6,cy-3], fill=(205,196,168), width=1)
     # Numbers band
     ny = row_y[1] + row_h[1] + 8
     d.rectangle([M,ny,R,ny+50], fill=(26,23,16))
     d.text((M+8,ny+4), "BY THE NUMBERS", font=F(SERIF_BOLD,9), fill=(255,205,80))
-    nw = (R-M-16)//4
-    for dv in range(1,4): d.line([M+8+dv*nw-6,ny+14,M+8+dv*nw-6,ny+46], fill=(90,82,60), width=1)
+    # Even 4x2 grid: equal 250px cells, thin vertical dividers on the cell
+    # boundaries, labels in a fixed column so every row lines up.
+    cell_w = (R-M)//4
+    for dv in range(1,4):
+        gx = M + dv*cell_w
+        d.line([gx,ny+15,gx,ny+47], fill=(90,82,60), width=1)
     for i,(big,lab) in enumerate(NUMBERS):
         col_i, row_i = i%4, i//4
-        x = M+8+col_i*nw; y = ny+16+row_i*17
+        x = M+col_i*cell_w+10; y = ny+16+row_i*17
         d.text((x,y), big, font=F(SERIF_BLACK,12), fill=(255,240,190))
-        bw_ = tw(d,big,F(SERIF_BLACK,12))
-        d.text((x+bw_+5,y+3), lab, font=F(SANS_REG,7), fill=(225,218,195))
+        d.text((x+90,y+2), lab, font=F(SANS_REG,8), fill=(225,218,195))
     # Markets & weather
     my = ny+56
     d.rectangle([M,my,R,my+58], fill=(252,248,235), outline=RULE, width=1)
@@ -355,7 +393,7 @@ def main():
         arrow = "\u25b2" if up else "\u25bc"
         acol = (20,140,60) if up else (190,40,40)
         d.text((x+tw(d,name,F(SANS_BOLD,10))+6,y), arrow, font=F(DEJA_BOLD,11), fill=acol)
-        d.text((x,y+13), note, font=F(SANS_REG,7), fill=MUTED)
+        d.text((x,y+13), note, font=F(SANS_REG,8), fill=MUTED)
         sx, sy2 = x+78, y+2
         coords = [(sx+j*11, sy2+pts[j]*2) for j in range(len(pts))]
         d.line(coords, fill=acol, width=2)
@@ -364,7 +402,7 @@ def main():
         x = mid+8+i*164; y = my+18
         weather_icon(d, x, y, kind)
         d.text((x+28,y), place, font=F(SANS_BOLD,8), fill=INK)
-        block(d, x+28, y+10, note, F(SANS_REG,7), 128, 8, MUTED, 2)
+        block(d, x+28, y+10, note, F(SANS_REG,8), 128, 9, MUTED, 2)
     # Ticker
     ty = my+64
     d.rectangle([M,ty,R,ty+52], fill=(139,30,30))
