@@ -20,6 +20,7 @@ SERIF_REG = f"{NOTO}/NotoSerif-Regular.ttf"
 SANS_BOLD = f"{NOTO}/NotoSans-Bold.ttf"
 SANS_SEMI = f"{NOTO}/NotoSans-SemiBold.ttf"
 SANS_REG = f"{NOTO}/NotoSans-Regular.ttf"
+DEJAVU_SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"  # has \u25c6\u25bc\u25b2
 
 _fonts = {}
 
@@ -50,10 +51,9 @@ HEROES = [
         "kind": "hormuz",
         "kicker": "STRAIT OF HORMUZ · ESCALATION",
         "headline": "Iran Strikes US Sites as Carriers Converge on Hormuz",
-        "deck": "Iran hit US drone and missile sites in Kuwait and Bahrain; "
-                "the US struck Qeshm Island. USS Theodore Roosevelt arrives "
-                "\u2014 three US carriers in the region, a merchant ship "
-                "attacked in the strait.",
+        "deck": "Iran hit US sites in Kuwait and Bahrain; US struck Qeshm "
+                "Island; a merchant ship attacked in the strait. USS Theodore "
+                "Roosevelt arrives \u2014 three carriers in region.",
     },
     {
         "kind": "vicecity",
@@ -84,17 +84,17 @@ SECTIONS = [
     ]),
     ("US & POLITICS", (31, 58, 110), [
         ("CAPITOL", "Democrats Nominate Hakeem Jeffries",
-         "Set to be the first Black Speaker of the House"),
+         "Democrats nominate Jeffries \u2014 set to be first Black Speaker of the House"),
         ("SENATE", "Peltola Wins Alaska for Democrats",
-         "Victory secures a 56\u201344 Senate majority"),
+         "Democrat Peltola wins Alaska, securing a 56\u201344 Senate majority"),
         ("CYBER", "Senators Warn on AI Cyber Threats",
-         "AI-enabled attacks are outpacing US defenses, senators warn"),
+         "Senators warn AI-enabled cyber threats are outpacing US defenses"),
         ("STATE DEPT", "State Dept Details $12bn Venezuela Take",
-         "Oil and mineral revenue from Venezuela itemised at $12bn"),
+         "State Department details $12bn in Venezuelan oil and mineral revenue"),
         ("DEFENSE", "Hegseth Makes Surprise Venezuela Trip",
-         "Signs a defense pact on a surprise trip to Venezuela"),
+         "Hegseth makes surprise Venezuela trip, signs a defense pact"),
         ("ISRAEL", "Eisenkot Tapped to Form Government",
-         "Israel's president bypasses Netanyahu in picking Eisenkot"),
+         "Israel's president taps Eisenkot to form a government, bypassing Netanyahu"),
     ]),
     ("MONEY & TECH", (20, 83, 45), [
         ("IPO", "Anthropic Raises $81.3bn in Record IPO",
@@ -114,41 +114,41 @@ SECTIONS = [
     ]),
     ("SCIENCE & PLANET", (14, 90, 109), [
         ("DEEP SPACE", "Voyager 1 Reaches One-Light-Day Mark",
-         "NASA probe hits the milestone nearly 50 years after launch"),
+         "NASA's Voyager 1 reaches the one-light-day milestone, nearly 50 years on"),
         ("OCEANS", "Nearly All Coral Reefs Face Extinction",
-         "IUCN study: reefs could vanish within 50 years"),
+         "IUCN study: nearly all coral reefs face extinction within 50 years"),
         ("ENERGY", "Finland Approves Nuclear Waste Vault",
-         "World's first permanent nuclear waste repository approved"),
+         "Finland approves the world's first permanent nuclear waste repository"),
         ("CYCLONE", "Cyclone Akvan Bears Down on India",
-         "Set to cross the Machilipatnam\u2013Puri coast on 20 November"),
+         "Cyclone Akvan bears down on the Machilipatnam\u2013Puri coast, crossing 20 Nov"),
         ("ORBIT", "ESA Chief Calls for Space Laws",
-         "Calls for space laws and satellite surveillance"),
+         "ESA chief calls for space laws and satellite surveillance in orbit"),
     ]),
     ("SOCIETY & CULTURE", (109, 42, 90), [
         ("ART MARKET", "Van Gogh Sells for Record $190.4m",
-         "Record price after a row over the painting's Nazi history"),
+         "Van Gogh painting sells for a record $190.4m after a row over its Nazi history"),
         ("FAITH", "Islam on Track to Be Largest Religion",
-         "Pew: largest in the world by 2035, the study projects"),
+         "Pew: Islam on track to become the world's largest religion by 2035"),
         ("FRANCE", "France: Fourth Weekend of Protests",
-         "Protests over living costs roll into a fourth weekend"),
+         "France sees a fourth weekend of protests over living costs"),
         ("ROYALS", "Modi Meets Prince & Princess of Wales",
-         "UK\u2013India ties in focus as PM Modi meets the royals"),
+         "PM Modi meets the Prince and Princess of Wales on UK\u2013India ties"),
         ("OBITUARY", "Pearl Harbor Survivor Dies at 105",
-         "Gebhard Galle, who survived the 1941 attack, was 105"),
+         "Pearl Harbor survivor Gebhard Galle dies at the age of 105"),
     ]),
     ("SPORT", (154, 52, 18), [
         ("FOOTBALL", "India Beat Pakistan 2\u20131 in SAFF Final",
-         "Final in Dhaka \u2014 India win the SAFF Championship"),
+         "India beat Pakistan 2\u20131 to win the SAFF Championship final in Dhaka"),
         ("NBA", "Mavericks 116, Warriors 94",
-         "Cooper Flagg scores 33 with 9 assists for Dallas"),
+         "NBA: Cooper Flagg scores 33 points with 9 assists for Dallas"),
         ("NBA", "Cavaliers Edge Grizzlies 105\u2013102",
-         "Cleveland take a tight one in the NBA, by three points"),
+         "NBA: Cavaliers edge Grizzlies 105\u2013102 in a tight finish"),
         ("CRICKET", "Duckett Hits 133 as England Take Charge",
-         "Third ODI against Australia: Duckett's 133 leads England"),
+         "Ben Duckett hits 133 as England take charge in the third ODI vs Australia"),
         ("HOCKEY", "India Women Open Hockey Campaign",
-         "Asian Champions Trophy opener vs Malaysia, in Bhopal"),
+         "India women open Asian Champions Trophy hockey campaign vs Malaysia, Bhopal"),
         ("POLICY", "Sports Ministry Forms League Committee",
-         "14-member committee for professionally run leagues"),
+         "Sports Ministry forms a 14-member committee for professionally run leagues"),
     ]),
 ]
 
@@ -163,10 +163,10 @@ NUMBERS = [
     ("105 YRS", "Pearl Harbor survivor"),
 ]
 
-MARKETS = [  # (name, note, points, colour, up?)
-    ("OIL", "\u25bc on improving supply", [38, 34, 35, 28, 29, 22, 18], (178, 34, 34), False),
-    ("GOLD", "\u25bc on a strong dollar", [36, 33, 34, 27, 28, 21, 17], (178, 34, 34), False),
-    ("FED FUNDS", "\u25b2 hawkish minutes", [14, 18, 17, 24, 23, 30, 34], (22, 128, 57), True),
+MARKETS = [  # (name, note, points, colour, up?) — arrow drawn as a polygon
+    ("OIL", "on improving supply", [38, 34, 35, 28, 29, 22, 18], (178, 34, 34), False),
+    ("GOLD", "on a strong dollar", [36, 33, 34, 27, 28, 21, 17], (178, 34, 34), False),
+    ("FED FUNDS", "hawkish minutes", [14, 18, 17, 24, 23, 30, 34], (22, 128, 57), True),
 ]
 
 WEATHER = [  # (place, note, icon)
@@ -309,7 +309,7 @@ def illus_hormuz(d, x, y, x2, y2):
     for wy in range(sea + 5, y2 - 3, 7):  # wave arcs
         for wx in range(x + rng.randint(0, 8), x2 - 12, 22):
             d.arc([wx, wy, wx + 12, wy + 5], 180, 360, fill=(150, 200, 232), width=1)
-    cx, cy = x + 58, sea + 12  # aircraft carrier
+    cx, cy = x + 58, sea + 2  # aircraft carrier (hull bottom stays in frame)
     d.polygon([(cx, cy + 16), (cx + 14, cy + 24), (cx + 168, cy + 24),
                (cx + 182, cy + 16)], fill=(44, 48, 54))
     d.rectangle([cx + 4, cy + 10, cx + 178, cy + 16], fill=(70, 76, 84))
@@ -381,52 +381,52 @@ def main():
     # ---- masthead ------------------------------------------------------
     d.rectangle([M, 8, W - M, 10], fill=INK)
     d.rectangle([M, 13, W - M, 14], fill=INK)
-    f_title = F(SERIF_BLACK, 47)
+    f_title = F(SERIF_BLACK, 44)
     title = "THE WHOLE DAY"
-    d.text(((W - tw(d, title, f_title)) / 2, 17), title, font=f_title, fill=INK)
+    d.text(((W - tw(d, title, f_title)) / 2, 14), title, font=f_title, fill=INK)
     f_side = F(SANS_BOLD, 9)
-    d.text((M + 2, 30), "Vol. I \u00b7 No. 19", font=f_side, fill=GREY)
-    d.text((M + 2, 43), "EST. 2026 \u00b7 DAILY", font=f_side, fill=GREY)
+    d.text((M + 2, 28), "Vol. I \u00b7 No. 19", font=f_side, fill=GREY)
+    d.text((M + 2, 41), "EST. 2026 \u00b7 DAILY", font=f_side, fill=GREY)
     right = f"{STORY_COUNT} STORIES"
-    d.text((W - M - 2 - tw(d, right, f_side), 30), right, font=f_side, fill=GREY)
-    d.text((W - M - 2 - tw(d, "ONE PAGE \u00b7 ONE DAY", f_side), 43),
+    d.text((W - M - 2 - tw(d, right, f_side), 28), right, font=f_side, fill=GREY)
+    d.text((W - M - 2 - tw(d, "ONE PAGE \u00b7 ONE DAY", f_side), 41),
            "ONE PAGE \u00b7 ONE DAY", font=f_side, fill=GREY)
     f_date = F(SERIF_BOLD, 12)
-    d.text((M + 2, 56), "Thursday, 19 November 2026", font=f_date, fill=INK)
+    d.text((M + 2, 60), "Thursday, 19 November 2026", font=f_date, fill=INK)
     f_ed = F(SANS_BOLD, 10)
     ed = "BROADSHEET EDITION \u2014 ALL THE DAY'S NEWS ON ONE PAGE"
-    d.text((W - M - 2 - tw(d, ed, f_ed), 57), ed, font=f_ed, fill=(122, 31, 31))
-    d.rectangle([M, 74, W - M, 75], fill=INK)
-    d.rectangle([M, 78, W - M, 81], fill=INK)
+    d.text((W - M - 2 - tw(d, ed, f_ed), 61), ed, font=f_ed, fill=(122, 31, 31))
+    d.rectangle([M, 76, W - M, 77], fill=INK)
+    d.rectangle([M, 80, W - M, 83], fill=INK)
 
     # ---- heroes ----------------------------------------------------------
-    hy, hh = 86, 152
+    hy, hh = 88, 154
     hgap = 6
     hw = (CW - 2 * hgap) // 3
     for i, hero in enumerate(HEROES):
         x = M + i * (hw + hgap)
         x2, y2 = x + hw, hy + hh
         panel(d, x, hy, x2, y2)
-        ILLUS[hero["kind"]](d, x + 5, hy + 5, x2 - 5, hy + 57)
-        d.rectangle([x + 5, hy + 5, x2 - 5, hy + 57], outline=RULE, width=1)
-        ky = hy + 62
+        ILLUS[hero["kind"]](d, x + 5, hy + 5, x2 - 5, hy + 55)
+        d.rectangle([x + 5, hy + 5, x2 - 5, hy + 55], outline=RULE, width=1)
+        ky = hy + 59
         fk = F(SANS_BOLD, 9)
         d.text((x + 8, ky), hero["kicker"], font=fk, fill=(122, 31, 31))
-        fh, hlines = fit_lines(d, hero["headline"], SERIF_BLACK, 19, 13,
+        fh, hlines = fit_lines(d, hero["headline"], SERIF_BLACK, 18, 13,
                                hw - 16, 2)
         ty = ky + 13
         for ln in hlines:
             d.text((x + 8, ty), ln, font=fh, fill=INK)
-            ty += fh.size + 3
+            ty += fh.size + 2
         fd, dlines = fit_lines(d, hero["deck"], SANS_REG, 11, 9,
                                hw - 16, 3)
         for ln in dlines:
             d.text((x + 8, ty + 1), ln, font=fd, fill=(52, 48, 42))
-            ty += fd.size + 3
+            ty += fd.size + 2
 
     # ---- six sections, 3 columns x 2 rows --------------------------------
-    sy = hy + hh + 8            # 246
-    sh_total = 566
+    sy = hy + hh + 8            # 250
+    sh_total = 562
     row_h = sh_total // 2
     sgap = 6
     sw = (CW - 2 * sgap) // 3
@@ -453,12 +453,12 @@ def main():
             fk = F(SANS_BOLD, 8)
             kw = tw(d, kick, fk)
             d.text((x + 14, cy + 4), kick, font=fk, fill=colour)
-            fh, headline = one_line(d, head, SERIF_BOLD, 13, 11,
-                                    sw - 28 - kw)
+            fh, headline = one_line(d, head, SERIF_BOLD, 14 if n <= 6 else 13,
+                                    11, sw - 28 - kw)
             d.text((x + 16 + kw, cy + 1), headline, font=fh, fill=INK)
-            max_dl = 2 if card_h >= 44 else 1
+            max_dl = 2 if card_h >= 40 else 1
             fd, dlines = fit_lines(d, deck, SANS_REG, 10, 9, sw - 22, max_dl)
-            dy = cy + 17
+            dy = cy + (18 if n <= 6 else 17)
             for ln in dlines:
                 d.text((x + 14, dy), ln, font=fd, fill=(62, 57, 50))
                 dy += fd.size + 2
@@ -498,13 +498,11 @@ def main():
         d.text((x + 8, my + 3), title, font=f_mt, fill=(255, 252, 244))
     # markets: three rows with sparklines
     mx = M
-    for i, (name, note, pts, colr, _up) in enumerate(MARKETS):
+    for i, (name, note, pts, colr, up) in enumerate(MARKETS):
         ry = my + 20 + i * 14
         f_mn = F(SANS_BOLD, 10)
         d.text((mx + 8, ry), name, font=f_mn, fill=INK)
-        sx0, sy0 = mx + 92, ry + 1
-        for a, b in zip(pts, pts[1:]):
-            pass
+        sx0 = mx + 92
         prev = None
         for k, p in enumerate(pts):
             px = sx0 + k * 11
@@ -514,8 +512,13 @@ def main():
             prev = (px, py)
         d.polygon([(prev[0] + 5, prev[1]), (prev[0] - 2, prev[1] - 3),
                    (prev[0] - 1, prev[1] + 4)], fill=colr)
+        ax, ay = mx + 192, ry + 3  # direction triangle (Noto Sans lacks \u25bc\u25b2)
+        if up:
+            d.polygon([(ax, ay + 7), (ax + 4, ay), (ax + 8, ay + 7)], fill=colr)
+        else:
+            d.polygon([(ax, ay), (ax + 8, ay), (ax + 4, ay + 7)], fill=colr)
         f_no = F(SANS_REG, 10)
-        d.text((mx + 190, ry), note, font=f_no, fill=(52, 48, 42))
+        d.text((mx + 204, ry), note, font=f_no, fill=(52, 48, 42))
     # weather: three columns with icons
     wx0 = M + half + sgap
     wcell = half / 3
@@ -553,7 +556,7 @@ def main():
     f_tl = F(SANS_BOLD, 9)
     d.text((M + 8, ty0 + 4), "LATE WIRE", font=f_tl, fill=(250, 205, 84))
     tick = "  \u25c6  ".join(TICKER)
-    f_tk, tlines = fit_lines(d, tick, SANS_REG, 10, 9, CW - 16, 4)
+    f_tk, tlines = fit_lines(d, tick, DEJAVU_SANS, 10, 9, CW - 16, 4)
     ly = ty0 + 17
     for ln in tlines:
         d.text((M + 8, ly), ln, font=f_tk, fill=(245, 240, 226))
